@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Eclipse Dance &amp; Performing Arts</title>
+	<style type="text/css">
+		body {
+			background-image: url(/images/WEBSITE%20BACKDROP.jpg);
+			background-color: #D6D6D6;
+		}
+
+		body, td, th {
+			font-family: Georgia, "Times New Roman", Times, serif;
+			color: #FFF;
+		}
+
+		a:link {
+			color: #FFF;
+		}
+
+		a:visited {
+			color: #9FC;
+		}
+	</style>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrPWKB-2w2QMaba43stP_FwIDSy7LWosM&callback=initMap&libraries=&v=weekly"
+			defer=defer></script>
+	<style type="text/css">
+        /* Style inputs */
+        input[type=text], select, textarea {
+            width: 50%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+			color: black;
+        }
+
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+            input[type=submit]:hover {
+                background-color: #45a049;
+            }
+		/* Set the size of the div element that contains the map */
+        #map {
+            height: 300px;
+            /* The height is 400 pixels */
+            width: 300px;
+            /* The width is the width of the web page */
+            margin-left: 10em;
+			border:double
+        }
+        #eclipseaddress {
+            padding-top:10em;
+			padding-left:15em;
+            font-size: 12px;
+        }
+        #sendQuery {
+            padding-top: 10em;
+            font-size: 12px;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto;
+
+        }
+       
+	</style>
+	<script>
+		// Initialize and add the map
+		function initMap() {
+			// The location of eclipse dance studio
+            const eclipsedancestudiolocation = { lat: -28.093223, lng: 116.572233 };
+			// The map, centered at Uluru
+			const map = new google.maps.Map(document.getElementById("map"), {
+				zoom: 4,
+                center: eclipsedancestudiolocation,
+			});
+			// The marker, positioned at Uluru
+			const marker = new google.maps.Marker({
+                position: eclipsedancestudiolocation,
+				map: map,
+			});
+		}
+	</script>
+</head>
+
+<body background="/images/WEBSITE BACKDROP.jpg" align="left" valign="middle">
+	<div class="grid-container">
+		<div class="grid-item">
+			<div id="eclipseaddress">
+				<h3>Our Address:</h3>
+				<p>Eclipse Dance &amp; Performing Arts</p>
+				<p>U2, 9 Abaya Street Jandakot WA </p>
+				<p> Jandakot WA    </p>
+				<p>Mobile: 9414 7794 or 0477 55 66 47</p>
+				<p>Email: <a href="admin@eclipsedance.com.au">admin@eclipsedance.com.au</a></p>
+			</div>
+			<div id="map">
+
+			</div>
+		</div>
+		<div class="grid-item">
+			<div class="column" id="sendQuery">
+				<form action="\Home\email" method="post" enctype="text/plain" name="EmailForm">
+					<h2 for="fname">Write to Us!!!!</h2><br />
+					<label for="fname">First Name</label><br />
+					<input type="text" id="fname" name="firstname" placeholder="Your name.." /><br />
+					<label for="lname">Last Name</label><br />
+					<input type="text" id="lname" name="lastname" placeholder="Your last name.." /><br />
+					<label for="Contact no.">Contact Number</label><br />
+					<input type="text" id="contactno" name="contactno" placeholder="Your contact number.." /><br />
+					<label for="Your Enquiry">Your Enquiry</label><br />
+					<textarea id="YourEnquiry" name="YourEnquiry" placeholder="Write something.." style="height:170px"></textarea><br />
+					<input type="submit" value="Submit" />
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
